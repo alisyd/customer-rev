@@ -5,7 +5,7 @@
 <hr>
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-10">
+        <div class=" col-12 col-md-10">
             <form method="POST" action="">
                 {{edit.hidden_tag()}}
                 <fieldset class="form-group ">
@@ -17,17 +17,17 @@
                     
                     <div class="form-group ">
                         
-                        {{ post.title.label(class="form-control-label") }}
-                        {% if post.title.errors %}
-                            {{ post.title(class="form-control is-invalid") }}
+                        {{ edit.title.label(class="form-control-label") }}
+                        {% if edit.title.errors %}
+                            {{ edit.title(class="form-control is-invalid") }}
                             <div class="invalid-feedback">
-                                {% for error in post.title.errors%}
+                                {% for error in edit.title.errors%}
                                     <span>{{ error}}</span>
                                 
                                 {% endfor %}
                             </div>
                         {% else %}
-                        {{ post.title(class="form-control ") }}
+                        {{ edit.title(class="form-control ") }}
                         {% endif%}
                     </div>
                     

@@ -81,10 +81,10 @@ class ReviewForm(FlaskForm):
 
 
 class EditForm(FlaskForm):
-    title=StringField("Product Name",validators=[DataRequired(message="This field is required"),Length(min=3,message=None)])
+    title=StringField("Title",validators=[DataRequired(message="This field is required"),Length(min=3,message=None)])
     product_name=StringField("Product Name",validators=[DataRequired(message="This field is required"),Length(min=3,max=20,message=None)])
     content=TextAreaField("Content",validators=[DataRequired(message="This field is required"),Length(min=3,message=None)])
-    submit=SubmitField("Submit")
+    submit=SubmitField("Save")
 
 # all app routes
 
@@ -191,4 +191,4 @@ def logout():
 
 
 if __name__=="__main__":
-    app.run(debug=True)
+    app.run()
