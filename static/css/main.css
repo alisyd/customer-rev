@@ -1,0 +1,26 @@
+body{
+    padding-top:6rem;
+}
+a:hover{
+    text-decoration:none
+}
+
+.trash{
+    color:rgb(209, 31, 31);
+    margin:  0px 0.2rem;
+
+}
+.trash:hover{
+    color:rgb(175, 0, 0);
+    margin:  0px 0.2rem;
+
+}
+.edit{
+    color:rgb(140, 9, 228);
+    margin:  0px 0.2rem;
+}
+
+.edit:hover{
+    color:rgb(114, 7, 185);
+    margin:  0px 0.2rem;
+}

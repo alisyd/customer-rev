@@ -1,0 +1,74 @@
+
+{% extends "base.html" %}
+{% block head %}<title>Create a Post</title>{% endblock %}
+{% block body %}
+<div class="container">
+    <hr>
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            <form method="POST" action="">
+                {{post.hidden_tag()}}
+                <fieldset class="form-group ">
+                                
+                    <legend class="border-bottom mb-4">
+                        Post A Review
+                    </legend>
+
+                    <div class="form-group ">
+                        
+                        {{ post.title.label(class="form-control-label") }}
+                        {% if post.title.errors %}
+                            {{ post.title(class="form-control is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in post.title.errors%}
+                                    <span>{{ error}}</span>
+                                
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                        {{ post.title(class="form-control ") }}
+                        {% endif%}
+                    </div>
+                    
+                    
+                    
+                    <div class="form-group ">
+                        
+                        {{ post.product_name.label(class="form-control-label") }}
+                        {% if post.product_name.errors %}
+                            {{ post.product_name(class="form-control is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in post.product_name.errors%}
+                                    <span>{{ error}}</span>
+                                
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                        {{ post.product_name(class="form-control ") }}
+                        {% endif%}
+                    </div>
+                    
+                    <div class="form-group ">
+                        
+                        {{ post.content.label(class="form-control-label") }}
+                        {% if post.content.errors %}
+                            {{ post.content(class="form-control is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in post.content.errors%}
+                                    <span>{{ error}}</span>
+                                
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                        {{ post.content(class="form-control ",rows="3") }}
+                        {% endif%}
+                    </div>
+                </fieldset>
+                {{ post.submit(class="btn btn-outline-success mb-3")}}
+            </form>
+        </div>
+    </div>
+    <hr>
+</div>
+
+{% endblock%}

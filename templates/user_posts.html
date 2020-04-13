@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block head %}<title>Your Posts</title>{% endblock %}
+{% block body %}
+{% for review in reviews %}
+<div class="card bd-highlight" id=box style=" margin-bottom:2rem;">
+    <div class="card-body">
+        <div class="d-flex">
+            <h4 class="card-title flex-grow-1">{{ review.title}}</h4>
+            
+            <a  class="trash" href="/user_posts/delete/{{ review.id }}" style="border-color: white;"><i class="fas fa-trash-alt"></i></a>
+            <a class="edit " href="/user_posts/edit/{{ review.id }}"><i class="fas fa-edit"></i></a>
+        </div>
+        <h5 class="card-subtitle mb-2">Product Name:{{ review.product_name}}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">Writtten by {{ review.author.username }} on {{ review.date_posted.strftime('%Y-%m-%d') }}</h6>
+       
+        <p class="card-text" style="white-space:pre-wrap">{{ review.content }}</p>
+       
+        {{review.upvotes}} <a style="margin:0px 0.1rem;">   <i class="fas fa-thumbs-up"> </i></a>
+        {{ review.downvotes }}  
+        <a style="margin-left:0.1rem;">  <i class="fas fa-thumbs-down"></i></a>
+        
+        
+    </div>
+</div>
+{% endfor %}
+{% endblock%}
