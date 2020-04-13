@@ -16,7 +16,7 @@
         <div class="d-flex">
             <h4 class="card-title flex-grow-1">{{ review.title}}</h4>
         </div>
-        <h5 class="card-subtitle mb-2">Product Name:{{ review.product_name}}</h5>
+        <h5 class="card-subtitle mb-2">Product Name : {{ review.product_name}}</h5>
         <h6 class="card-subtitle mb-2 text-muted">Writtten by {{ review.author.username }} on {{ review.date_posted.strftime('%Y-%m-%d') }}</h6>
        
         <p class="card-text block-quote" style="white-space:pre-wrap">{{ review.content }}</p>
