@@ -1,6 +1,18 @@
 {% extends "base.html" %}
 {% block head %}<title>Your Posts</title>{% endblock %}
 {% block body %}
+{%if reviews|length==0%}
+<div class="jumbotron">
+    <h1 class="display-4">Sorry! you've not written a Review yet</h1>
+    <p class="lead">You can go to <a href="{{url_for('new_post')}}">New posts</a> to write a review
+    </p>
+    <hr class="my-4">
+    <p>Or just go through the existing one, you might find them funny or userful.</p>
+
+  </div>
+
+{% endif%}
+
 {% for review in reviews %}
 <div class="card bd-highlight" id=box style=" margin-bottom:2rem;">
     <div class="card-body">
