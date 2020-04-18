@@ -12,23 +12,28 @@
 </head>
 
 <body>
-    <nav class="navbar fixed-top navbar-expand navbar-light bg-light mb-5">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light mb-5">
         <div class="container">
             <a class="navbar-brand" href=" {{ url_for('home')}}">Home</a>
-            <div class="nav justify-content-end ">
-                <div class="navbar-nav">
-                    {% if current_user.is_authenticated%}
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navitems" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
 
-                    <a class="nav-item nav-link "  href="{{ url_for('new_post')}}" aria-selected="false">New Post</a>
-                    <a class="nav-item nav-link" href="{{ url_for('view_posts')}}" aria-selected="false">Your Posts</a>
-                    <a class="nav-item nav-link"  href="{{ url_for('logout')}}">Logout <i class="fas fa-sign-out-alt"></i></a>
+            <div class="nav collapse navbar-collapse justify-content-lg-end " id="navitems">
+                
+                    <div class="navbar-nav ">
+                        {% if current_user.is_authenticated%}
 
-                    {% else%}
-                    <a class="nav-item nav-link link" href="{{url_for('login')}}"><i class="fas fa-sign-in-alt"></i> Login</a>
-                    <a class="nav-item nav-link link" href="{{ url_for('register')}}"><i class="fas fa-user-plus"></i> Register</a>
-                    {% endif%}
-                </div>
+                        <a class="nav-item nav-link "  href="{{ url_for('new_post')}}" aria-selected="false">New Post <i class="far fa-plus-square"></i> </a>
+                        <a class="nav-item nav-link" href="{{ url_for('view_posts')}}" aria-selected="false">Your Posts</a>
+                        <a class="nav-item nav-link"  href="{{ url_for('logout')}}">Logout <i class="fas fa-sign-out-alt"></i></a>
 
+                        {% else%}
+                        <a class="nav-item nav-link link" href="{{url_for('login')}}"><i class="fas fa-sign-in-alt"></i> Login</a>
+                        <a class="nav-item nav-link link" href="{{ url_for('register')}}"><i class="fas fa-user-plus"></i> Register</a>
+                        {% endif%}
+                    </div>
+            
             </div>
 
         </div>
@@ -37,6 +42,9 @@
 
         {% block body %}{% endblock %}
     </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </body>
 
 </html>
