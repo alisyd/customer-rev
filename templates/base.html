@@ -12,14 +12,14 @@
 </head>
 
 <body>
-    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light mb-5">
+    <nav class="navbar fixed-top navbar-expand-md navbar-light bg-light mb-5">
         <div class="container">
             <a class="navbar-brand" href=" {{ url_for('home')}}">Home</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navitems" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
 
-            <div class="nav collapse navbar-collapse justify-content-lg-end " id="navitems">
+            <div class="nav collapse navbar-collapse justify-content-md-end " id="navitems">
                 
                     <div class="navbar-nav ">
                         {% if current_user.is_authenticated%}
