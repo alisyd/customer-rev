@@ -12,7 +12,7 @@ from flask_login import LoginManager,UserMixin, login_user, current_user,logout_
 
 app = Flask(__name__)
 app.config['SECRET_KEY']="codename47"
-app.config["SQLALCHEMY_DATABASE_URI"] = 'postgres://ixyayyezdkoxqo:08973ca0fe55e566a312ce3d6522c99283835ea8fe18f0478a2a8b6cca0e5da4@ec2-54-210-128-153.compute-1.amazonaws.com:5432/d5gcvqs0k664q4'
+app.config["SQLALCHEMY_DATABASE_URI"] = 'postgres://ixcvnvngnmtuzh:736ca061a7c5127218cd3dcff508e1a66d50e3da0e0c1a050370f0946f1daa64@ec2-18-211-254-112.compute-1.amazonaws.com:5432/d57jqdoa2qfem6'
 db = SQLAlchemy(app)
 bcrypt=Bcrypt(app)
 login_manager=LoginManager(app)
