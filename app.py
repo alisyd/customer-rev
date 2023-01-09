@@ -12,7 +12,7 @@ from flask_login import LoginManager,UserMixin, login_user, current_user,logout_
 
 app = Flask(__name__)
 app.config['SECRET_KEY']="codename47"
-app.config["SQLALCHEMY_DATABASE_URI"] = 'postgres://ixcvnvngnmtuzh:736ca061a7c5127218cd3dcff508e1a66d50e3da0e0c1a050370f0946f1daa64@ec2-18-211-254-112.compute-1.amazonaws.com:5432/d57jqdoa2qfem6'
+app.config["SQLALCHEMY_DATABASE_URI"] = 'sqlite:///mydatabase.db'
 db = SQLAlchemy(app)
 bcrypt=Bcrypt(app)
 login_manager=LoginManager(app)
@@ -92,7 +92,7 @@ class EditForm(FlaskForm):
 def home():
     reviews=Review.query.order_by(Review.upvotes.desc())
     return render_template("index.html",reviews=reviews)
-
+    #return "hello world"
 #creating a new post
 @app.route('/new_post', methods=["GET","POST"] )
 @login_required
@@ -106,7 +106,7 @@ def new_post():
     return render_template('new_post.html',post=post)
 
 #viewing the posts of current user
-@app.route('/user_posts', methods=["GET","POST"] )
+@app.route('/user_post', methods=["GET","POST"] )
 @login_required
 def view_posts():
     reviews=current_user.reviews
@@ -190,4 +190,4 @@ def logout():
 
 
 if __name__=="__main__":
-    app.run(port=5000)
+    app.run(port=5000, debug = True)
